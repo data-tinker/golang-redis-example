@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"os"
 
 	"encoding/json"
 	"golang-redis-example/models"
@@ -15,8 +16,13 @@ const (
 )
 
 func main() {
+	redisAddr := os.Getenv("REDIS_ADDR")
+	if redisAddr == "" {
+		redisAddr = "localhost:6379"
+	}
+
 	client := redis.NewClient(&redis.Options{
-		Addr:     "redis:6379",
+		Addr:     redisAddr,
 		Password: "",
 		DB:       0,
 	})
