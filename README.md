@@ -8,5 +8,6 @@ Redis usage example in Go
 
 ## Technologies Used
 * [Go](https://go.dev/)
+* [go-redis](https://github.com/redis/go-redis)
 * [Redis](https://redis.io/)
 * [Docker](https://www.docker.com/)
